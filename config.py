@@ -3,8 +3,15 @@
 # =============================================================================
 
 # Telegram credentials  (required for alerts and bot commands)
-TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
-TELEGRAM_CHAT_ID   = "YOUR_CHAT_ID_HERE"
+# Token is read from the macOS Keychain (service: TELEGRAM_BOT_TOKEN, account: openclaw)
+import subprocess as _sp
+TELEGRAM_BOT_TOKEN = _sp.check_output(
+    ["security", "find-generic-password", "-s", "TELEGRAM_BOT_TOKEN", "-a", "openclaw", "-w"],
+    text=True,
+).strip()
+del _sp
+
+TELEGRAM_CHAT_ID = "1965551853"
 
 # Routes to monitor
 ROUTES = [
