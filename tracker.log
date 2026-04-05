@@ -1,0 +1,2 @@
+2026-04-05 16:39:14,265  WARNING   FX fetch failed (HTTP Error 403: Forbidden); using fallback rate 1.36
+2026-04-05 16:39:41,127  INFO      FX rate USD->CAD: 1.3909
